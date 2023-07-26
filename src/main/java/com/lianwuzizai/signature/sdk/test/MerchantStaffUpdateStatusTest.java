@@ -19,12 +19,11 @@ public class MerchantStaffUpdateStatusTest {
 
 
     /**
-     * 消息云发送消息
-     *
+     * Enable/Disable Employee
      */
     @Test
     public void merchantStaffUpdateStatusTest() {
-        Config config = new Config("accessKeyId", "accessKeySecret")
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         MerchantStaffUpdateStatusRequest updateStatusRequest = new MerchantStaffUpdateStatusRequest();

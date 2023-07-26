@@ -13,22 +13,17 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @Classname ExportTaskAddTest
- * @Description 添加导出任务Test
- * @Date 2022/1/24 15:35
- * @Author DingJunLei
- */
+
 public class ExportTaskAddTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * 新增导出任务
+     * Adding an Export Task
      */
     @Test
-    public void exportTaskAddTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void exportTaskAddTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         ExportTaskAddRequest exportTaskAddRequest = new ExportTaskAddRequest();
@@ -41,7 +36,7 @@ public class ExportTaskAddTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(exportTaskAddResponse));
+        logger.info("result：" + JSONUtil.toJSONString(exportTaskAddResponse));
 
     }
 

@@ -12,20 +12,17 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @Description 导出smartpay查询测试
- * @Author pengkai
- */
+
 public class SpecialDeviceStatusTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * 导出smartpay 文件
+     *
      */
     @Test
     public void specialDeviceStatusTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         SpecialDeviceStatusRequest params = new SpecialDeviceStatusRequest();
@@ -39,7 +36,7 @@ public class SpecialDeviceStatusTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result："+ JSONUtil.toJSONString(result));
 
     }
 

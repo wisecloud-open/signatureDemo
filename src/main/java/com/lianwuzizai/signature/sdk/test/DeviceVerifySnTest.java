@@ -15,21 +15,17 @@ import org.slf4j.LoggerFactory;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @Classname DeviceVerifySnTest
- * @Description 批量校验设备snTest
- * @Date 2023/5/11 17:51
- * @Author DingJunLei
- */
+
 public class DeviceVerifySnTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     /**
-     * 批量校验设备snTest
+     * Batch check equipment
      */
     @Test
-    public void deviceVerifySnTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void deviceVerifySnTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         DeviceVerifySnRequest params = new DeviceVerifySnRequest();
@@ -42,7 +38,7 @@ public class DeviceVerifySnTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result：" + JSONUtil.toJSONString(result));
 
     }
 

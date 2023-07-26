@@ -12,19 +12,17 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @Classname DeviceTerminalConfigurationTest
- * @Description 设备在系统配置中的最新配置请求Test
- * @Date 2022/2/16 15:45
- * @Author DingJunLei
- */
+
 public class DeviceTerminalConfigurationTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * The latest configuration of the device in the system configuration
+     */
     @Test
-    public void deviceOnlineRecordTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void deviceOnlineRecordTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         DeviceTerminalConfigurationRequest params = new DeviceTerminalConfigurationRequest();
@@ -37,7 +35,7 @@ public class DeviceTerminalConfigurationTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result：" + JSONUtil.toJSONString(result));
     }
 
     private void buildRequestParams(DeviceTerminalConfigurationRequest params) {

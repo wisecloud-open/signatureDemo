@@ -12,22 +12,17 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @Classname InstructionTaskQueryTest
- * @Description 指令任务结果查询请求测试类
- * @Date 2022/1/27 14:10
- * @Author DingJunLei
- */
+
 public class InstructionTaskDetailsTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * 指令任务结果查询请求测试类
+     * Command task result query
      */
     @Test
-    public void instructionTaskPushTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void instructionTaskDetailsTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         InstructionTaskDetailsRequest instructionTaskDetailsRequest = new InstructionTaskDetailsRequest();

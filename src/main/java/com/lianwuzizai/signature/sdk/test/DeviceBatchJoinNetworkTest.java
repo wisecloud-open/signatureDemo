@@ -14,19 +14,17 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
-/**
- * @Classname DeviceBatchJoinNetwork
- * @Description 设备批量入网Test
- * @Date 2022/2/16 16:58
- * @Author DingJunLei
- */
+
 public class DeviceBatchJoinNetworkTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * Devices are connected to the network in batches
+     */
     @Test
-    public void deviceBatchJoinNetworkTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void deviceBatchJoinNetworkTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         DeviceBatchJoinNetworkRequest params = new DeviceBatchJoinNetworkRequest();
@@ -39,11 +37,11 @@ public class DeviceBatchJoinNetworkTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result：" + JSONUtil.toJSONString(result));
     }
 
     private void buildRequestParams(DeviceBatchJoinNetworkRequest params) {
-        params.setSnList(Arrays.asList("WNET5W20040111112","WNET5W200402222222"));
+        params.setSnList(Arrays.asList("WNET5W20040111112", "WNET5W200402222222"));
     }
 
 }

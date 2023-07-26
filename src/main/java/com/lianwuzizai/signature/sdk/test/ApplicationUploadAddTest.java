@@ -16,22 +16,17 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
-/**
- * @Classname AppAddTest
- * @Description 上传app
- * @Date 2022/1/24 15:35
- * @Author DingJunLei
- */
+
 public class ApplicationUploadAddTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * 新增应用
+     * upload and add application
      */
     @Test
-    public void applicationUploadAddTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void applicationUploadAddTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         ApplicationUploadAddRequest appUploadAddRequest = new ApplicationUploadAddRequest();

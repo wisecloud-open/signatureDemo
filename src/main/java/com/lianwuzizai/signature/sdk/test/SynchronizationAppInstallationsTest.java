@@ -12,21 +12,16 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @Classname AppInstallSyncTest
- * @Description 已安装应用同步测试类
- * @Date 2022/1/26 17:11
- * @Author DingJunLei
- */
+
 public class SynchronizationAppInstallationsTest {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * 新增应用
+     * query partners' applications Install devices
      */
     @Test
     public void synchronizationAppInstallationsTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         SynchronizationAppInstallationsRequest appInstallSyncRequest = new SynchronizationAppInstallationsRequest();

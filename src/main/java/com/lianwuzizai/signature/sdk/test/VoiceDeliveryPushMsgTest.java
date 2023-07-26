@@ -22,12 +22,11 @@ public class VoiceDeliveryPushMsgTest {
 
 
     /**
-     * 消息云发送消息
-     *
+     * The message cloud sends messages
      */
     @Test
     public void deliveryPushMsgTest() {
-        Config config = new Config("accessKeyId", "accessKeySecret")
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         VoiceDeliveryPushMsgRequest pushMsgRequest = new VoiceDeliveryPushMsgRequest();

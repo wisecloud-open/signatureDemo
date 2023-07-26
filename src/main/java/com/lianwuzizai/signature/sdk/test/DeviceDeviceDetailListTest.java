@@ -22,12 +22,11 @@ public class DeviceDeviceDetailListTest {
 
 
     /**
-     * 消息云发送消息
-     *
+     * wisecloud send message
      */
     @Test
     public void deviceDeviceDetailListTest() {
-        Config config = new Config("accessKeyId", "accessKeySecret")
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         DeviceDeviceDetailListRequest detailListRequest = new DeviceDeviceDetailListRequest();

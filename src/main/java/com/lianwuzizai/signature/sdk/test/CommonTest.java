@@ -16,23 +16,18 @@ import org.slf4j.LoggerFactory;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 
-/**
- * @Classname AppAddTest
- * @Description 上传app
- * @Date 2022/1/24 15:35
- * @Author DingJunLei
- */
+
 public class CommonTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
     /**
-     * 新增应用
+     * upload application
      */
     @Test
-    public void saveAppTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void saveAppTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         CommonRequest commonRequest = new CommonRequest("device/service/api/app/upload")

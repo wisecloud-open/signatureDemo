@@ -17,18 +17,17 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
-/**
- * @Classname TerminalResourceUpload
- * @Description 资源上传(开机动画、启动画面，壁纸，屏保)Test
- * @Date 2022/2/25 14:59
- * @Author DingJunLei
- */
+
 public class TerminalResourceUploadTest {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * Resource upload (boot animation, boot screen, wallpaper, screensaver)
+     *
+     */
     @Test
     public void terminalResourceUploadTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         TerminalResourceUploadRequest params = new TerminalResourceUploadRequest();
@@ -41,7 +40,7 @@ public class TerminalResourceUploadTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result："+ JSONUtil.toJSONString(result));
     }
 
     private void buildRequestParams(TerminalResourceUploadRequest params) {

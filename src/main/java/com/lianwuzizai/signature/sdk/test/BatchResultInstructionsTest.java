@@ -14,23 +14,18 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
-/**
- * @Classname BatchDevicesDetailTest
- * @Description 批量查询指令结果请求Test
- * @Date 2022/2/9 19:19
- * @Author DingJunLei
- */
+
 public class BatchResultInstructionsTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
     /**
-     * 新增导出任务
+     * Batch querying command execution results
      */
     @Test
-    public void batchResultInstructionsTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void batchResultInstructionsTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         BatchResultInstructionsRequest params = new BatchResultInstructionsRequest();
@@ -43,12 +38,12 @@ public class BatchResultInstructionsTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result：" + JSONUtil.toJSONString(result));
 
     }
 
     private void buildRequestParams(BatchResultInstructionsRequest params) {
-        params.setTraceIdList(Arrays.asList("100001","100002"));
+        params.setTraceIdList(Arrays.asList("100001", "100002"));
     }
 
 }

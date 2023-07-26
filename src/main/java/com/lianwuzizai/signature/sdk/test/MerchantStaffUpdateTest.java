@@ -20,12 +20,11 @@ public class MerchantStaffUpdateTest {
 
 
     /**
-     * 消息云发送消息
-     *
+     * Modify Employee Information
      */
     @Test
     public void merchantStaffUpdateTest() {
-        Config config = new Config("accessKeyId", "accessKeySecret")
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         MerchantStaffUpdateRequest updateRequest = new MerchantStaffUpdateRequest();
@@ -47,9 +46,9 @@ public class MerchantStaffUpdateTest {
         updateRequest.setSn("WISEBOT000010");
         updateRequest.setPosition(EmployeePositionEnum.manager);
         updateRequest.setStaffName("lq");
-        updateRequest.setLoginAccount("liqing@wiseasy.com");
+        updateRequest.setLoginAccount("xxx@wiseasy.com");
         updateRequest.setStoreNo("40000546");
-        updateRequest.setStoreName("帮忙小零食");
+        updateRequest.setStoreName("help foods");
         updateRequest.setStatus(EmployeeStatusEnum.manager);
     }
 }

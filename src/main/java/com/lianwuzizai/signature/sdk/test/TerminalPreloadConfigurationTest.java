@@ -17,19 +17,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @Classname TerminalSettingAddTest
- * @Description 批量新增/删除预装应用配置请求Test
- * @Date 2022/2/25 10:05
- * @Author DingJunLei
- */
+
 public class TerminalPreloadConfigurationTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * Pre-installed application configuration (added batch removal)
+     *
+     */
     @Test
     public void terminalPreloadConfigurationTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         TerminalPreloadConfigurationRequest params = new TerminalPreloadConfigurationRequest();
@@ -42,7 +41,7 @@ public class TerminalPreloadConfigurationTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result："+ JSONUtil.toJSONString(result));
     }
 
     private void buildRequestParams(TerminalPreloadConfigurationRequest params) {

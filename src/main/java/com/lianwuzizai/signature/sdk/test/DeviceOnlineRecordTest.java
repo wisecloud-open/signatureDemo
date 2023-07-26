@@ -12,19 +12,17 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @Classname DeviceOnlineRecord
- * @Description 设备上下线记录接口Test
- * @Date 2022/2/16 14:28
- * @Author DingJunLei
- */
+
 public class DeviceOnlineRecordTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * Record the device online and offline
+     */
     @Test
-    public void deviceOnlineRecordTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void deviceOnlineRecordTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         DeviceOnlineRecordRequest params = new DeviceOnlineRecordRequest();
@@ -37,7 +35,7 @@ public class DeviceOnlineRecordTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result：" + JSONUtil.toJSONString(result));
     }
 
     private void buildRequestParams(DeviceOnlineRecordRequest params) {

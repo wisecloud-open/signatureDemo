@@ -19,22 +19,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-/**
- * @Classname InstructionTaskPushTest
- * @Description 批量，单个指令推送请求测试类
- * @Date 2022/1/26 18:44
- * @Author DingJunLei
- */
 public class InstructionTaskPushTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * 新增应用
+     * Batch, single instruction push
      */
     @Test
-    public void instructionTaskPushTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void instructionTaskPushTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         InstructionTaskPushRequest instructionTaskPushRequest = new InstructionTaskPushRequest();
@@ -55,13 +49,13 @@ public class InstructionTaskPushTest {
     private void buildRequestParams(InstructionTaskPushRequest instructionTaskPushRequest, InstructionTypeEnum type) {
         instructionTaskPushRequest.setInstructionKey(InstructionsKeyEnum.voiceTypeSetting);
 
-        System.out.println("=================="+ type);
+        System.out.println("==================" + type);
         Object target = null;
         Map<String, Object> targetJson = new HashMap<>();
-        switch (type){
+        switch (type) {
             case SINGLE_PUSH:
                 instructionTaskPushRequest.setType(InstructionTypeEnum.getByCode(88));
-                targetJson.put("sn","PP12345612345612");
+                targetJson.put("sn", "PP12345612345612");
                 target = targetJson;
                 break;
             case BATCH_PUSH:
@@ -70,7 +64,7 @@ public class InstructionTaskPushTest {
                 break;
             case TAG_PUSH:
                 instructionTaskPushRequest.setType(type);
-                targetJson.put("tag","testLabel");
+                targetJson.put("tag", "testLabel");
                 target = targetJson;
                 break;
             default:

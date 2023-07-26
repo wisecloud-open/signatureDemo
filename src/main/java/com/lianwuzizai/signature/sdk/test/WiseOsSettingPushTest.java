@@ -16,28 +16,23 @@ import org.slf4j.LoggerFactory;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @Classname WiseOsSettingPushTest
- * @Description wiseOsSetting推送时区设置Test
- * @Date 2023/5/12 18:18
- * @Author DingJunLei
- */
+
 public class WiseOsSettingPushTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
-     * wiseOsSetting推送时区设置
+     * Change device time zones in batches
      */
     @Test
-    public void wiseOsSettingPushTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void wiseOsSettingPushTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         WiseOsSettingPushRequest params = new WiseOsSettingPushRequest();
         params.setVersion("v1.0");
         buildRequestParams(params);
-        logger.info("=========>"+JSONUtil.toJSONString(params));
+        logger.info("=========>" + JSONUtil.toJSONString(params));
         WiseOsSettingPushResponse result = null;
         try {
             result = openApiClient.execute(params);
@@ -45,7 +40,7 @@ public class WiseOsSettingPushTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result：" + JSONUtil.toJSONString(result));
 
     }
 

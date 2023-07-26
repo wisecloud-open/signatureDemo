@@ -12,19 +12,17 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @Classname DeviceInstallApplicationsTest
- * @Description 设备安装应用列表Test
- * @Date 2022/2/15 16:42
- * @Author DingJunLei
- */
+
 public class DeviceInstallApplicationsTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * Device installation application list
+     */
     @Test
-    public void deviceInstallApplicationsTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void deviceInstallApplicationsTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         DeviceInstallApplicationsRequest params = new DeviceInstallApplicationsRequest();
@@ -37,7 +35,7 @@ public class DeviceInstallApplicationsTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result：" + JSONUtil.toJSONString(result));
     }
 
     private void buildRequestParams(DeviceInstallApplicationsRequest params) {

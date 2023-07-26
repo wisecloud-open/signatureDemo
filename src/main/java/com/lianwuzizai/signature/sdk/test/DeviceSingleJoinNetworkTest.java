@@ -12,20 +12,18 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @Classname DeviceSingleJoinNetworkTest
- * @Description 单个设备入网Test
- * @Date 2022/2/16 17:33
- * @Author DingJunLei
- */
+
 public class DeviceSingleJoinNetworkTest {
 
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * A single device is connected to the network
+     */
     @Test
-    public void deviceSingleJoinNetworkTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+    public void deviceSingleJoinNetworkTest() {
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         DeviceSingleJoinNetworkRequest params = new DeviceSingleJoinNetworkRequest();
@@ -38,7 +36,7 @@ public class DeviceSingleJoinNetworkTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result：" + JSONUtil.toJSONString(result));
     }
 
     private void buildRequestParams(DeviceSingleJoinNetworkRequest params) {

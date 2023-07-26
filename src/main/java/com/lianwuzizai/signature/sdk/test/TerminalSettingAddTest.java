@@ -15,19 +15,18 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
-/**
- * @Classname TerminalSettingAddTest
- * @Description 保存终端系统设置任务请求Test
- * @Date 2022/2/25 10:05
- * @Author DingJunLei
- */
+
 public class TerminalSettingAddTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * Save terminal system Settings
+     *
+     */
     @Test
     public void terminalSettingAddTest(){
-        Config config = new Config("accessKeyId", "accessKeySecret")
+        Config config = new Config("your accessKeyId", "your accessKeySecret")
                 .setEndpointUrl(EndpointUrlEnum.LONDON); //the default endpoint is London if not set
         OpenApiClient openApiClient = new DefaultOpenApiClient(config);
         TerminalSettingAddRequest params = new TerminalSettingAddRequest();
@@ -40,7 +39,7 @@ public class TerminalSettingAddTest {
             e.printStackTrace();
             logger.error("error:" + e.getCode() + "->>" + e.getMsg());
         }
-        logger.info("响应结果："+ JSONUtil.toJSONString(result));
+        logger.info("result："+ JSONUtil.toJSONString(result));
     }
 
     private void buildRequestParams(TerminalSettingAddRequest params) {
