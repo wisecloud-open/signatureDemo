@@ -1,4 +1,4 @@
-package com.lianwuzizai.signature.demo;
+package com.lianwuzizai.signature.utils;
 
 @SuppressWarnings("all")
 public class Base64Util {

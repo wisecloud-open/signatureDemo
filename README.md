@@ -29,3 +29,4 @@ If the signature algorithm is Hmac-SHA356, the string obtained in Step 3 and acc
 
 Client side and server level unified agreement AES encryption and decryption, the key is accessKeySecret.
 
+## sdk test code 
